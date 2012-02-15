@@ -24,8 +24,8 @@ class CheckSmartSpritesFilterPass implements CompilerPassInterface
     public function process(ContainerBuilder $container)
     {
         if ($container->hasDefinition('assetic.filter.smartsprites') &&
-            !$container->getParameterBag()->resolveValue($container->getParameter('assetic.filter.smartsprites.path'))) {
-            throw new \RuntimeException('The "assetic.filters.smartsprites" configuration requires a "path" value.');
+            !$container->getParameterBag()->resolveValue($container->getParameter('assetic.filter.smartsprites.classpath'))) {
+            throw new \RuntimeException('The "assetic.filters.smartsprites" configuration requires a "classppath" value.');
         }
     }
 }
